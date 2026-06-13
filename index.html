@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)file:///C:/Users/ADMIN/Downloads/ramya_portfolio.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ramya Thatipamula — QA Automation Engineer | SDET</title>
+<link href="./index_files/css2" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --navy:#06090F;
+  --navy2:#0D1526;
+  --slate:#152036;
+  --slate2:#1C2D4A;
+  --teal:#00C9B8;
+  --teal2:#00E5D2;
+  --teal-dim:rgba(0,201,184,0.10);
+  --teal-glow:rgba(0,201,184,0.35);
+  --teal-border:rgba(0,201,184,0.18);
+  --violet:#8B7CF6;
+  --violet-dim:rgba(139,124,246,0.12);
+  --violet-border:rgba(139,124,246,0.22);
+  --amber:#F0A500;
+  --amber-dim:rgba(240,165,0,0.10);
+  --white:#EEF0F5;
+  --grey:#7A8EAD;
+  --grey2:#4E607E;
+  --green:#2DD4A0;
+}
+
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--white);font-family:'Inter',sans-serif;line-height:1.65;overflow-x:hidden}
+
+/* ════════ SCROLLBAR ════════ */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--navy2)}
+::-webkit-scrollbar-thumb{background:var(--teal-glow);border-radius:10px}
+
+/* ════════ NAV ════════ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1rem 5vw;
+  background:rgba(6,9,15,0.88);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--teal-border);
+}
+.nav-brand{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.82rem;color:var(--teal);letter-spacing:0.1em;
+}
+.nav-brand span{color:var(--grey)}
+.nav-links{display:flex;gap:1.75rem;list-style:none}
+.nav-links a{
+  font-size:0.8rem;color:var(--grey);text-decoration:none;
+  letter-spacing:0.06em;text-transform:uppercase;
+  transition:color 0.2s;font-family:'JetBrains Mono',monospace;
+}
+.nav-links a:hover{color:var(--teal)}
+.nav-badge{
+  background:var(--green);color:var(--navy);
+  font-size:0.65rem;font-weight:700;letter-spacing:0.08em;
+  padding:0.25rem 0.6rem;border-radius:20px;
+  font-family:'Space Grotesk',sans-serif;
+  animation:pulse 2s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.65}}
+
+/* ════════ HERO ════════ */
+.hero{
+  min-height:100vh;
+  display:flex;align-items:center;
+  padding:7rem 5vw 5rem;
+  position:relative;overflow:hidden;
+}
+.hero-bg-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(0,201,184,0.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(0,201,184,0.03) 1px,transparent 1px);
+  background-size:48px 48px;
+  pointer-events:none;
+}
+.hero-glow{
+  position:absolute;top:-100px;right:-100px;
+  width:700px;height:700px;
+  background:radial-gradient(circle,rgba(0,201,184,0.06) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-glow2{
+  position:absolute;bottom:-150px;left:-100px;
+  width:500px;height:500px;
+  background:radial-gradient(circle,rgba(139,124,246,0.05) 0%,transparent 65%);
+  pointer-events:none;
+}
+
+.hero-content{max-width:820px;position:relative;z-index:1}
+
+.hero-status{
+  display:inline-flex;align-items:center;gap:0.6rem;
+  background:rgba(45,212,160,0.1);border:1px solid rgba(45,212,160,0.25);
+  color:var(--green);border-radius:20px;
+  font-size:0.75rem;letter-spacing:0.1em;text-transform:uppercase;
+  padding:0.35rem 1rem;margin-bottom:2rem;
+  font-family:'JetBrains Mono',monospace;
+}
+.hero-status::before{
+  content:'';width:7px;height:7px;background:var(--green);
+  border-radius:50%;animation:pulse 1.5s ease-in-out infinite;
+}
+
+.hero-name{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(3rem,7vw,5.5rem);
+  font-weight:700;line-height:1.0;
+  letter-spacing:-0.03em;
+  background:linear-gradient(135deg,var(--white) 40%,var(--teal) 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;
+  margin-bottom:1.25rem;
+}
+
+.hero-title{
+  font-family:'JetBrains Mono',monospace;
+  font-size:clamp(0.9rem,1.8vw,1.15rem);
+  color:var(--grey);margin-bottom:0.5rem;letter-spacing:0.03em;
+}
+.hero-title .t{color:var(--teal)}
+.cursor{
+  display:inline-block;width:2px;height:1em;
+  background:var(--teal);vertical-align:text-bottom;
+  animation:blink 0.85s step-end infinite;
+}
+@keyframes blink{50%{opacity:0}}
+
+.hero-tagline{
+  font-size:clamp(0.9rem,1.5vw,1.05rem);
+  color:var(--grey);max-width:620px;line-height:1.8;
+  margin:1.5rem 0 2.5rem;
+}
+
+.hero-actions{display:flex;gap:0.9rem;flex-wrap:wrap;margin-bottom:3.5rem}
+.btn{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  padding:0.75rem 1.6rem;border-radius:7px;
+  font-family:'Space Grotesk',sans-serif;font-size:0.85rem;font-weight:600;
+  letter-spacing:0.04em;text-decoration:none;cursor:pointer;
+  transition:all 0.22s;border:none;
+}
+.btn-teal{background:var(--teal);color:var(--navy)}
+.btn-teal:hover{background:var(--teal2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,201,184,0.3)}
+.btn-ghost{background:transparent;color:var(--teal);border:1.5px solid var(--teal-border)}
+.btn-ghost:hover{background:var(--teal-dim);border-color:var(--teal)}
+
+.hero-metrics{
+  display:flex;gap:2.5rem;flex-wrap:wrap;
+  padding-top:2.5rem;
+  border-top:1px solid rgba(255,255,255,0.07);
+}
+.metric{display:flex;flex-direction:column;gap:0.2rem}
+.metric-val{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:2.2rem;font-weight:700;color:var(--teal);line-height:1;
+}
+.metric-lbl{font-size:0.73rem;color:var(--grey);letter-spacing:0.05em;text-transform:uppercase}
+
+/* ════════ SECTION BASE ════════ */
+.sec{padding:5.5rem 5vw}
+.sec-alt{background:var(--slate)}
+.sec-eyebrow{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.72rem;color:var(--teal);
+  letter-spacing:0.2em;text-transform:uppercase;
+  display:flex;align-items:center;gap:0.6rem;margin-bottom:0.6rem;
+}
+.sec-eyebrow::before{content:'//';color:var(--grey2)}
+.sec-h{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:clamp(1.75rem,3.5vw,2.5rem);
+  font-weight:700;letter-spacing:-0.02em;margin-bottom:3rem;
+}
+
+/* ════════ ABOUT / SUMMARY ════════ */
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;
+}
+.about-text p{
+  font-size:0.95rem;color:var(--grey);line-height:1.85;margin-bottom:1.2rem;
+}
+.about-text p:last-child{margin-bottom:0}
+.about-text strong{color:var(--white);font-weight:500}
+.about-sidebar{display:flex;flex-direction:column;gap:1.25rem}
+.info-card{
+  background:var(--navy2);border:1px solid var(--teal-border);
+  border-radius:10px;padding:1.25rem 1.5rem;
+}
+.info-card-label{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.65rem;color:var(--teal);
+  letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;
+}
+.info-row{
+  display:flex;align-items:center;gap:0.6rem;
+  font-size:0.83rem;color:var(--grey);padding:0.3rem 0;
+}
+.info-row a{color:var(--grey);text-decoration:none;transition:color 0.2s}
+.info-row a:hover{color:var(--teal)}
+.info-icon{font-size:0.85rem;width:20px;text-align:center;flex-shrink:0}
+.open-badge{
+  background:rgba(45,212,160,0.1);border:1px solid rgba(45,212,160,0.25);
+  color:var(--green);border-radius:6px;padding:0.9rem 1rem;
+  font-size:0.8rem;line-height:1.6;
+}
+.open-badge strong{display:block;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem}
+
+/* ════════ SKILLS ════════ */
+.skills-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.25rem;
+}
+.skill-card{
+  background:var(--navy2);border:1px solid var(--teal-border);
+  border-radius:10px;padding:1.5rem;
+  transition:border-color 0.2s,transform 0.2s;
+}
+.skill-card:hover{border-color:var(--teal-glow);transform:translateY(-2px)}
+.skill-card-hd{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:0.72rem;font-weight:600;
+  color:var(--teal);letter-spacing:0.12em;text-transform:uppercase;
+  margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem;
+}
+.chip-wrap{display:flex;flex-wrap:wrap;gap:0.45rem}
+.chip{
+  font-family:'JetBrains Mono',monospace;font-size:0.7rem;
+  padding:0.28rem 0.65rem;border-radius:4px;
+  background:var(--teal-dim);color:var(--teal);border:1px solid var(--teal-border);
+  white-space:nowrap;
+}
+.chip.v{background:var(--violet-dim);color:var(--violet);border-color:var(--violet-border)}
+.chip.a{background:var(--amber-dim);color:var(--amber);border-color:rgba(240,165,0,0.2)}
+
+/* ════════ EXPERIENCE ════════ */
+.exp-list{display:flex;flex-direction:column;gap:2.5rem}
+.exp-card{
+  background:var(--navy2);border:1px solid var(--teal-border);
+  border-radius:12px;padding:2rem;
+  transition:border-color 0.2s;position:relative;overflow:hidden;
+}
+.exp-card::before{
+  content:'';position:absolute;top:0;left:0;width:3px;height:100%;
+  background:linear-gradient(180deg,var(--teal),var(--violet));
+}
+.exp-card:hover{border-color:rgba(0,201,184,0.3)}
+.exp-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:0.6rem}
+.exp-role{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1.15rem;font-weight:700;color:var(--white);
+}
+.exp-meta{display:flex;flex-direction:column;align-items:flex-end;gap:0.3rem}
+.exp-date{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.72rem;color:var(--teal);letter-spacing:0.05em;
+}
+.exp-company{font-size:0.82rem;color:var(--grey)}
+.exp-tags{display:flex;gap:0.5rem;margin-bottom:1.25rem;flex-wrap:wrap}
+.tag{
+  font-size:0.68rem;font-family:'JetBrains Mono',monospace;
+  padding:0.2rem 0.6rem;border-radius:3px;
+}
+.tag-domain{background:var(--violet-dim);color:var(--violet);border:1px solid var(--violet-border)}
+.tag-type{background:var(--teal-dim);color:var(--teal);border:1px solid var(--teal-border)}
+.exp-desc{
+  font-size:0.85rem;color:var(--grey);line-height:1.7;
+  margin-bottom:1rem;font-style:italic;
+}
+.exp-pts{list-style:none;display:flex;flex-direction:column;gap:0.55rem}
+.exp-pts li{
+  font-size:0.86rem;color:var(--grey);line-height:1.65;
+  padding-left:1.25rem;position:relative;
+}
+.exp-pts li::before{
+  content:'▸';position:absolute;left:0;
+  color:var(--teal);font-size:0.75rem;top:0.1rem;
+}
+.exp-pts li strong{color:var(--white);font-weight:500}
+.exp-section-title{
+  font-size:0.7rem;font-family:'JetBrains Mono',monospace;
+  color:var(--grey2);letter-spacing:0.1em;text-transform:uppercase;
+  margin:1.25rem 0 0.6rem;padding-top:1.25rem;
+  border-top:1px solid rgba(255,255,255,0.06);
+}
+.exp-kf-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:0.5rem;margin-bottom:1rem;
+}
+.exp-kf{
+  font-size:0.75rem;color:var(--grey);
+  background:rgba(255,255,255,0.03);
+  border-radius:5px;padding:0.4rem 0.7rem;
+  border:1px solid rgba(255,255,255,0.06);
+}
+.exp-kf::before{content:'• ';color:var(--teal)}
+
+/* ════════ EDUCATION ════════ */
+.edu-list{display:flex;flex-direction:column;gap:1.25rem}
+.edu-card{
+  background:var(--navy2);border:1px solid var(--teal-border);
+  border-radius:10px;padding:1.5rem;
+  display:grid;grid-template-columns:auto 1fr;gap:1.25rem;align-items:center;
+  transition:border-color 0.2s;
+}
+.edu-card:hover{border-color:var(--teal-glow)}
+.edu-icon{
+  width:48px;height:48px;border-radius:10px;
+  background:var(--teal-dim);border:1px solid var(--teal-border);
+  display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;
+}
+.edu-degree{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:0.95rem;font-weight:600;color:var(--white);margin-bottom:0.25rem;
+}
+.edu-inst{font-size:0.83rem;color:var(--teal);margin-bottom:0.2rem}
+.edu-period{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.7rem;color:var(--grey);letter-spacing:0.05em;
+}
+
+/* ════════ CERTIFICATIONS ════════ */
+.cert-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  gap:1rem;
+}
+.cert-card{
+  background:var(--navy2);border:1px solid var(--teal-border);
+  border-radius:9px;padding:1.15rem 1.25rem;
+  display:flex;align-items:flex-start;gap:0.85rem;
+  transition:border-color 0.2s,transform 0.2s;
+}
+.cert-card:hover{border-color:rgba(0,201,184,0.35);transform:translateY(-2px)}
+.cert-ico{
+  width:36px;height:36px;border-radius:8px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;background:var(--teal-dim);border:1px solid var(--teal-border);
+}
+.cert-ico.v{background:var(--violet-dim);border-color:var(--violet-border)}
+.cert-ico.a{background:var(--amber-dim);border-color:rgba(240,165,0,0.2)}
+.cert-body{}
+.cert-name{font-size:0.83rem;color:var(--white);font-weight:500;line-height:1.45;margin-bottom:0.2rem}
+.cert-issuer{font-size:0.7rem;color:var(--grey);font-family:'JetBrains Mono',monospace}
+
+/* ════════ CONTACT ════════ */
+.contact-sec{background:var(--navy);text-align:center}
+.contact-sec .sec-eyebrow{justify-content:center}
+.contact-sec .sec-h{text-align:center}
+.contact-sub{color:var(--grey);font-size:0.95rem;max-width:520px;margin:-2rem auto 2.5rem;line-height:1.75}
+.contact-grid{
+  display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem;
+}
+.contact-btn{
+  display:flex;align-items:center;gap:0.6rem;
+  background:var(--slate);border:1px solid var(--teal-border);
+  color:var(--white);font-size:0.83rem;padding:0.85rem 1.5rem;
+  border-radius:8px;text-decoration:none;
+  font-family:'JetBrains Mono',monospace;
+  transition:all 0.2s;
+}
+.contact-btn:hover{background:var(--teal-dim);border-color:var(--teal);color:var(--teal)}
+.contact-btn .ci{font-size:1rem}
+.roles-seeking{
+  background:var(--slate);border:1px solid var(--teal-border);
+  border-radius:12px;padding:2rem;max-width:700px;margin:0 auto;
+}
+.roles-title{
+  font-family:'JetBrains Mono',monospace;
+  font-size:0.7rem;color:var(--teal);letter-spacing:0.15em;
+  text-transform:uppercase;margin-bottom:1rem;
+}
+.roles-list{display:flex;flex-wrap:wrap;gap:0.6rem;justify-content:center}
+.role-tag{
+  background:var(--teal-dim);color:var(--teal);border:1px solid var(--teal-border);
+  font-size:0.78rem;padding:0.4rem 1rem;border-radius:20px;
+  font-family:'Space Grotesk',sans-serif;font-weight:500;
+}
+
+/* ════════ FOOTER ════════ */
+footer{
+  background:var(--navy2);padding:1.5rem 5vw;
+  display:flex;justify-content:space-between;align-items:center;
+  border-top:1px solid var(--teal-border);flex-wrap:wrap;gap:0.5rem;
+}
+footer p{font-size:0.73rem;color:var(--grey2);font-family:'JetBrains Mono',monospace}
+
+/* ════════ REVEAL ════════ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.65s ease,transform 0.65s ease}
+.reveal.in{opacity:1;transform:none}
+
+/* ════════ RESPONSIVE ════════ */
+@media(max-width:768px){
+  .about-grid{grid-template-columns:1fr}
+  .exp-top{flex-direction:column}
+  .exp-meta{align-items:flex-start}
+  .hero-metrics{gap:1.5rem}
+  .nav-links{display:none}
+  .edu-card{grid-template-columns:1fr}
+  .edu-icon{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <div class="nav-brand">ramya<span>.</span>thatipamula</div>
+  <ul class="nav-links">
+    <li><a href="file:///C:/Users/ADMIN/Downloads/ramya_portfolio.html#about">About</a></li>
+    <li><a href="file:///C:/Users/ADMIN/Downloads/ramya_portfolio.html#skills">Skills</a></li>
+    <li><a href="file:///C:/Users/ADMIN/Downloads/ramya_portfolio.html#experience">Experience</a></li>
+    <li><a href="file:///C:/Users/ADMIN/Downloads/ramya_portfolio.html#education">Education</a></li>
+    <li><a href="file:///C:/Users/ADMIN/Downloads/ramya_portfolio.html#certifications">Certs</a></li>
+    <li><a href="file:///C:/Users/ADMIN/Downloads/ramya_portfolio.html#contact">Contact</a></li>
+  </ul>
+  <div class="nav-badge">Available Now</div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-content">
+    <div class="hero-status">Available Immediately · Open to Relocation Across India</div>
+    <h1 class="hero-name">Ramya<br>Thatipamula</h1>
+    <div class="hero-title">&gt;&nbsp;<span class="t" id="typed">Selenium + Java Exp</span><span class="cursor"></span></div>
+    <p class="hero-tagline">
+      <span class="hl-pill">4.8 yrs in IT</span>&nbsp;<span class="hl-pill teal">4 yrs in QA Automation</span>
+      &nbsp;— crafting scalable, intelligent test frameworks across
+      <strong>Healthcare</strong> and <strong>Telecom</strong> domains.
+      Expert in Selenium, Java, REST Assured, Cucumber BDD &amp; CI/CD pipelines —
+      turning quality from an afterthought into your team's biggest release-day advantage.
+    </p>
+    <div class="hero-actions">
+      <a href="mailto:ramyat.dss@gmail.com" class="btn btn-teal">✉ Get in Touch</a>
+      <a href="https://www.linkedin.com/in/ramyathatipamula" target="_blank" class="btn btn-ghost">in LinkedIn Profile</a>
+      <a href="tel:+917981467103" class="btn btn-ghost">📱 +91 79814 67103</a>
+    </div>
+    <div class="hero-metrics">
+      <div class="metric"><div class="metric-val">4.8</div><div class="metric-lbl">Years in IT</div></div>
+      <div class="metric"><div class="metric-val">4</div><div class="metric-lbl">Years QA Automation</div></div>
+      <div class="metric"><div class="metric-val">300+</div><div class="metric-lbl">Test Cases Automated</div></div>
+      <div class="metric"><div class="metric-val">60%</div><div class="metric-lbl">Manual Effort Reduced</div></div>
+      <div class="metric"><div class="metric-val">40%</div><div class="metric-lbl">Faster Release Cycles</div></div>
+      <div class="metric"><div class="metric-val">150+</div><div class="metric-lbl">Defects Tracked &amp; Closed</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section class="sec sec-alt reveal" id="about">
+  <div class="sec-eyebrow">Profile Summary</div>
+  <div class="sec-h">About Me</div>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>I'm a <strong>QA Automation Engineer / SDET</strong> with 4+ years of specialized experience in QA Automation, Web UI Testing, API Testing, and Quality Engineering. I design, develop, and maintain scalable test automation frameworks using <strong>Selenium WebDriver, Core Java, TestNG, Cucumber BDD,</strong> and <strong>REST Assured</strong>.</p>
+      <p>My hands-on experience spans <strong>Functional, Regression, Smoke, Integration, API Automation, Database Validation,</strong> and <strong>End-to-End Testing</strong> across Healthcare and Telecom domains. I specialize in Hybrid Framework and Page Object Model (POM) architectures, building reusable automation components that improve software quality and release confidence.</p>
+      <p>I'm experienced in validating RESTful APIs with REST Assured and Postman, defect lifecycle management with JIRA, and CI/CD integration via Jenkins and Git. Proficient with <strong>SQL, Maven, ExtentReports,</strong> and <strong>Allure</strong> reporting. I consistently reduce manual testing effort and accelerate delivery cycles while maintaining compliance with SDLC, STLC, and Agile Scrum methodologies.</p>
+      <p>I'm currently expanding into <strong>Playwright</strong> and <strong>AI-powered testing solutions</strong> to enhance modern quality engineering capabilities, already leveraging ChatGPT and GitHub Copilot for test generation and debugging in production workflows.</p>
+    </div>
+    <div class="about-sidebar">
+      <div class="info-card">
+        <div class="info-card-label">Contact &amp; Location</div>
+        <div class="info-row"><span class="info-icon">📍</span> Hyderabad, Telangana, India</div>
+        <div class="info-row"><span class="info-icon">✉</span><a href="mailto:ramyat.dss@gmail.com">ramyat.dss@gmail.com</a></div>
+        <div class="info-row"><span class="info-icon">📱</span><a href="tel:+917981467103">+91 79814 67103</a></div>
+        <div class="info-row"><span class="info-icon">in</span><a href="https://www.linkedin.com/in/ramyathatipamula" target="_blank">linkedin.com/in/ramyathatipamula</a></div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-label">Top Skills</div>
+        <div class="info-row"><span class="info-icon">⭐</span> GitHub</div>
+        <div class="info-row"><span class="info-icon">⭐</span> Jenkins CI/CD</div>
+        <div class="info-row"><span class="info-icon">⭐</span> Problem Solving</div>
+      </div>
+      <div class="open-badge">
+        <strong>🟢 Open to Opportunities</strong>
+        Immediate joiner. Open to relocation across India for QA Automation Engineer, SDET, Senior QA Engineer, Test Automation Engineer, and API Automation Engineer roles.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SKILLS ══ -->
+<section class="sec reveal" id="skills">
+  <div class="sec-eyebrow">Technical Arsenal</div>
+  <div class="sec-h">Skills &amp; Expertise</div>
+  <div class="skills-grid">
+
+    <div class="skill-card">
+      <div class="skill-card-hd">🧪 Automation Frameworks</div>
+      <div class="chip-wrap">
+        <span class="chip">Selenium WebDriver</span>
+        <span class="chip">Hybrid Framework</span>
+        <span class="chip">Page Object Model</span>
+        <span class="chip">Cucumber BDD</span>
+        <span class="chip">Gherkin</span>
+        <span class="chip">TestNG</span>
+        <span class="chip">JUnit</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-hd">🔌 API &amp; Backend Testing</div>
+      <div class="chip-wrap">
+        <span class="chip">REST Assured</span>
+        <span class="chip">Postman</span>
+        <span class="chip">RESTful APIs</span>
+        <span class="chip">JSON Schema Validation</span>
+        <span class="chip">HTTP Methods</span>
+        <span class="chip">API Automation</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-hd">☕ Languages &amp; Build</div>
+      <div class="chip-wrap">
+        <span class="chip">Core Java</span>
+        <span class="chip">OOP Principles</span>
+        <span class="chip">SQL</span>
+        <span class="chip">Maven</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-hd">🔄 CI/CD &amp; Version Control</div>
+      <div class="chip-wrap">
+        <span class="chip">Jenkins</span>
+        <span class="chip">Git</span>
+        <span class="chip">GitHub</span>
+        <span class="chip">CI/CD Pipelines</span>
+        <span class="chip">Nightly Regression</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-hd">🧩 Testing Types</div>
+      <div class="chip-wrap">
+        <span class="chip">Functional Testing</span>
+        <span class="chip">Regression Testing</span>
+        <span class="chip">Smoke Testing</span>
+        <span class="chip">Sanity Testing</span>
+        <span class="chip">Integration Testing</span>
+        <span class="chip">Database Testing</span>
+        <span class="chip">End-to-End Testing</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-hd">📊 Reporting &amp; Management</div>
+      <div class="chip-wrap">
+        <span class="chip">ExtentReports</span>
+        <span class="chip">Allure Reports</span>
+        <span class="chip">JIRA</span>
+        <span class="chip">Defect Management</span>
+        <span class="chip">Agile / Scrum</span>
+        <span class="chip">SDLC / STLC</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-hd v">🤖 AI &amp; Modern Tools</div>
+      <div class="chip-wrap">
+        <span class="chip v">ChatGPT for QA</span>
+        <span class="chip v">GitHub Copilot</span>
+        <span class="chip v">Generative AI</span>
+        <span class="chip v">Playwright (Exploring)</span>
+        <span class="chip v">AI Test Generation</span>
+      </div>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-card-hd a">☁️ Cloud &amp; Infrastructure</div>
+      <div class="chip-wrap">
+        <span class="chip a">Microsoft Azure</span>
+        <span class="chip a">Cloud Foundations</span>
+        <span class="chip a">IaaS</span>
+        <span class="chip a">Cloud Service Providers</span>
+        <span class="chip a">Big Data / Hadoop</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ EXPERIENCE ══ -->
+<section class="sec sec-alt reveal" id="experience">
+  <div class="sec-eyebrow">Career Timeline</div>
+  <div class="sec-h">Work Experience</div>
+  <div class="exp-list">
+
+    <!-- M3 Solutions -->
+    <div class="exp-card">
+      <div class="exp-top">
+        <div>
+          <div class="exp-role">Test Engineer</div>
+          <div style="font-size:0.95rem;color:var(--teal);font-weight:600;margin-top:0.2rem">M3 Solutions</div>
+        </div>
+        <div class="exp-meta">
+          <div class="exp-date">Jan 2024 – Jun 2026 · 2 yrs 6 mos</div>
+          <div class="exp-company">📍 Hyderabad</div>
+        </div>
+      </div>
+      <div class="exp-tags">
+        <span class="tag tag-domain">Healthcare</span>
+        <span class="tag tag-domain">Telecom</span>
+        <span class="tag tag-type">Full-Time</span>
+        <span class="tag tag-type">Agile Scrum</span>
+      </div>
+
+      <div class="exp-section-title">Healthcare Domain — Nutrition &amp; Health Platform</div>
+      <ul class="exp-pts">
+        <li>Developed and maintained <strong>Hybrid Automation Framework</strong> using Selenium WebDriver and Core Java, adopted across multiple sprint cycles for reliable regression coverage.</li>
+        <li>Implemented <strong>BDD framework using Cucumber</strong> with Gherkin scenarios — enabled non-technical stakeholders to review and validate test coverage.</li>
+        <li>Automated <strong>100+ end-to-end UI workflows</strong> covering user registration, diet plan management, calorie tracking, health metrics (BMI, weight), and dietician consultation modules.</li>
+        <li>Performed API Testing using <strong>REST Assured and Postman</strong> — validated 30+ REST endpoints for HTTP methods, JSON schema, status codes, and SQL database consistency.</li>
+        <li>Executed <strong>Functional, Regression, Smoke, Sanity, and Database Testing</strong> using SQL queries across all sprint releases.</li>
+        <li>Integrated automation suite with <strong>Jenkins CI/CD pipeline</strong> — enabled nightly regression runs and reduced release cycle time by <strong>40%</strong>.</li>
+        <li>Used Git for version control; collaborated with cross-functional Agile Scrum teams in sprint planning, stand-ups, and retrospectives.</li>
+        <li>Tracked and closed <strong>150+ defects</strong> in JIRA with RCA and severity classification; delivered sprint QA metrics (pass rate, defect density, coverage) to stakeholders.</li>
+        <li>Leveraged AI tools — <strong>ChatGPT, GitHub Copilot, Generative AI</strong> — for test case generation, XPath optimization, and debugging support.</li>
+      </ul>
+
+      <div class="exp-section-title">Telecom Domain — Verizon Enterprise Demand Planning Platform</div>
+      <ul class="exp-pts">
+        <li>Designed and developed <strong>Selenium WebDriver + Core Java Automation Framework</strong> for Verizon's enterprise demand planning platform.</li>
+        <li>Implemented <strong>Cucumber BDD framework</strong> for reusable, readable test scenarios covering demand forecasting, inventory management, and network capacity planning.</li>
+        <li>Automated <strong>200+ functional test cases</strong> using TestNG and JUnit — reduced manual testing effort by <strong>60%</strong>.</li>
+        <li>Performed <strong>API Testing using REST Assured and Postman</strong> to validate telecom backend services, API responses, and data integrity.</li>
+        <li>Executed Functional, Regression, Smoke, Sanity, and Database Testing using SQL queries across all builds.</li>
+      </ul>
+    </div>
+
+    <!-- Sutherland -->
+    <div class="exp-card">
+      <div class="exp-top">
+        <div>
+          <div class="exp-role">Software Engineer — QA</div>
+          <div style="font-size:0.95rem;color:var(--teal);font-weight:600;margin-top:0.2rem">Sutherland</div>
+        </div>
+        <div class="exp-meta">
+          <div class="exp-date">Jun 2023 – Dec 2023 · 7 mos</div>
+          <div class="exp-company">📍 Hyderabad</div>
+        </div>
+      </div>
+      <div class="exp-tags">
+        <span class="tag tag-domain">Telecom</span>
+        <span class="tag tag-type">Full-Time</span>
+      </div>
+      <p class="exp-desc">Telecom Demand Planning System — platform forecasting demand for telecom products (SIM cards, devices, network usage) to optimize inventory, capacity, and supply chain operations.</p>
+
+      <div class="exp-section-title">Key Features Tested</div>
+      <div class="exp-kf-grid">
+        <div class="exp-kf">Demand Forecasting</div>
+        <div class="exp-kf">Inventory Management</div>
+        <div class="exp-kf">Network Capacity Planning</div>
+        <div class="exp-kf">Order &amp; Supply Planning</div>
+        <div class="exp-kf">Alerts &amp; Notifications</div>
+        <div class="exp-kf">Reporting Dashboards &amp; Analytics</div>
+        <div class="exp-kf">Role-Based Access Management</div>
+      </div>
+
+      <div class="exp-section-title">Roles &amp; Responsibilities</div>
+      <ul class="exp-pts">
+        <li>Designed and developed Automation Framework using <strong>Selenium WebDriver with Core Java</strong>.</li>
+        <li>Implemented <strong>BDD framework using Cucumber</strong> for reusable and readable test scenarios.</li>
+        <li>Automated end-to-end workflows including demand forecasting, inventory management, and network capacity planning.</li>
+        <li>Performed <strong>API Testing using REST Assured and Postman</strong> to validate telecom backend services and API responses.</li>
+        <li>Executed Functional, Regression, Smoke, Sanity, and <strong>Database Testing using SQL queries</strong>.</li>
+        <li>Verified data consistency between <strong>UI, APIs, and Database</strong> systems.</li>
+        <li>Created and maintained <strong>TestNG test suites</strong> for automated execution and reporting.</li>
+        <li>Integrated automation scripts with <strong>Jenkins CI/CD pipeline</strong> for continuous testing and faster delivery cycles.</li>
+        <li>Used Git for version control and collaborated with cross-functional <strong>Agile Scrum</strong> teams.</li>
+        <li>Utilized <strong>AI tools like ChatGPT and Generative AI</strong> for test case generation, automation support, debugging assistance, test data preparation, and productivity improvement.</li>
+      </ul>
+    </div>
+
+    <!-- Suneratech -->
+    <div class="exp-card">
+      <div class="exp-top">
+        <div>
+          <div class="exp-role">Software Engineer</div>
+          <div style="font-size:0.95rem;color:var(--teal);font-weight:600;margin-top:0.2rem">Suneratech</div>
+        </div>
+        <div class="exp-meta">
+          <div class="exp-date">Oct 2021 – May 2023 · 1 yr 8 mos</div>
+          <div class="exp-company">📍 Hyderabad</div>
+        </div>
+      </div>
+      <div class="exp-tags">
+        <span class="tag tag-type">Full-Time</span>
+        <span class="tag tag-type">QA Engineering</span>
+      </div>
+      <ul class="exp-pts">
+        <li>Developed and refined QA automation expertise across multiple project domains using Selenium WebDriver and Java-based frameworks.</li>
+        <li>Contributed to functional, regression, smoke, and sanity testing across sprint cycles in Agile environments.</li>
+        <li>Gained experience in building robust, maintainable test suites aligned with SDLC and STLC practices.</li>
+      </ul>
+    </div>
+
+    <!-- JSpiders -->
+    <div class="exp-card">
+      <div class="exp-top">
+        <div>
+          <div class="exp-role">Trainee</div>
+          <div style="font-size:0.95rem;color:var(--teal);font-weight:600;margin-top:0.2rem">JSpiders — Training &amp; Development Center</div>
+        </div>
+        <div class="exp-meta">
+          <div class="exp-date">Jan 2021 – Oct 2021 · 10 mos</div>
+          <div class="exp-company">📍 Hyderabad</div>
+        </div>
+      </div>
+      <div class="exp-tags">
+        <span class="tag tag-type">Training</span>
+        <span class="tag tag-type">Java Development</span>
+      </div>
+      <ul class="exp-pts">
+        <li>Developed a fully functional game using <strong>Greenfoot Java Project</strong> with actors, world, animations, user inputs, and scoring mechanisms.</li>
+        <li>Collaborated with team members to create interactive 2D games and simulations, applying <strong>object-oriented programming principles</strong>.</li>
+        <li>Implemented collision detection and interactions between characters to enhance user experience.</li>
+        <li>Enhanced skills in Java programming, game development, and problem-solving.</li>
+      </ul>
+    </div>
+
+    <!-- Vega Placements -->
+    <div class="exp-card">
+      <div class="exp-top">
+        <div>
+          <div class="exp-role">Project Intern</div>
+          <div style="font-size:0.95rem;color:var(--teal);font-weight:600;margin-top:0.2rem">Vega Placements and Training</div>
+        </div>
+        <div class="exp-meta">
+          <div class="exp-date">Jan 2020 – Jun 2020 · 6 mos</div>
+          <div class="exp-company">📍 Warangal, Telangana</div>
+        </div>
+      </div>
+      <div class="exp-tags">
+        <span class="tag tag-domain">Security Research</span>
+        <span class="tag tag-type">Internship</span>
+      </div>
+      <ul class="exp-pts">
+        <li>Led the project on <strong>Search Rank Fraud and Malware Detection in Google Play</strong>, introducing a Fair Play system to detect fraudulent apps evading Google Bouncer.</li>
+        <li>Analyzed app executables and permissions to identify malware and apps engaging in search rank fraud.</li>
+        <li>Collaborated with a team to develop innovative techniques to combat fraudulent behaviors in the Android app market.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ EDUCATION ══ -->
+<section class="sec reveal" id="education">
+  <div class="sec-eyebrow">Academic Background</div>
+  <div class="sec-h">Education</div>
+  <div class="edu-list">
+
+    <div class="edu-card">
+      <div class="edu-icon">🎓</div>
+      <div>
+        <div class="edu-degree">Bachelor of Technology — Computer Science &amp; Engineering</div>
+        <div class="edu-inst">Jayamukhi Institute of Technological Sciences</div>
+        <div class="edu-period">Aug 2016 – Sep 2020</div>
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <div class="edu-icon">📚</div>
+      <div>
+        <div class="edu-degree">Intermediate — MPC (Mathematics, Physics, Chemistry)</div>
+        <div class="edu-inst">SR College for Girls</div>
+        <div class="edu-period">Jun 2014 – Apr 2016</div>
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <div class="edu-icon">🏫</div>
+      <div>
+        <div class="edu-degree">High School</div>
+        <div class="edu-inst">Vishwa Bharathi High School</div>
+        <div class="edu-period">Mar 2013 – Apr 2014</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ CERTIFICATIONS ══ -->
+<section class="sec sec-alt reveal" id="certifications">
+  <div class="sec-eyebrow">Credentials</div>
+  <div class="sec-h">Certifications</div>
+  <div class="cert-grid">
+
+    <div class="cert-card">
+      <div class="cert-ico">⚙️</div>
+      <div class="cert-body">
+        <div class="cert-name">Introduction To DevOps</div>
+        <div class="cert-issuer">DevOps · CI/CD</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-ico a">☁️</div>
+      <div class="cert-body">
+        <div class="cert-name">IaaS for Cloud Computing</div>
+        <div class="cert-issuer">Cloud Infrastructure</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-ico a">🌐</div>
+      <div class="cert-body">
+        <div class="cert-name">Cloud Service Providers</div>
+        <div class="cert-issuer">Cloud Computing</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-ico a">🏗️</div>
+      <div class="cert-body">
+        <div class="cert-name">Cloud Foundations</div>
+        <div class="cert-issuer">Cloud Computing</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-ico a">🚀</div>
+      <div class="cert-body">
+        <div class="cert-name">Cloud Foundations — Advanced</div>
+        <div class="cert-issuer">Cloud Computing · Advanced</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-ico">🧪</div>
+      <div class="cert-body">
+        <div class="cert-name">Selenium WebDriver with Java — Basics to Advanced</div>
+        <div class="cert-issuer">Test Automation</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-ico">🔌</div>
+      <div class="cert-body">
+        <div class="cert-name">REST API Testing (Automation) from Scratch — REST Assured</div>
+        <div class="cert-issuer">API Testing</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-ico">🥒</div>
+      <div class="cert-body">
+        <div class="cert-name">Cucumber BDD with Java — Master Selenium Framework</div>
+        <div class="cert-issuer">BDD · Test Automation</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-ico">☕</div>
+      <div class="cert-body">
+        <div class="cert-name">Java Programming Masterclass — Core Java</div>
+        <div class="cert-issuer">Programming · Java</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-ico">🔁</div>
+      <div class="cert-body">
+        <div class="cert-name">Jenkins — From Zero to Hero (CI/CD)</div>
+        <div class="cert-issuer">CI/CD · DevOps</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-ico">🗄️</div>
+      <div class="cert-body">
+        <div class="cert-name">SQL for Beginners — MySQL &amp; Database Design</div>
+        <div class="cert-issuer">Database · SQL</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-ico">🌿</div>
+      <div class="cert-body">
+        <div class="cert-name">Git &amp; GitHub — Complete Git Guide</div>
+        <div class="cert-issuer">Version Control</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-ico">📋</div>
+      <div class="cert-body">
+        <div class="cert-name">Agile Crash Course — Agile Project Management &amp; Delivery</div>
+        <div class="cert-issuer">Agile · Scrum</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-ico">🔍</div>
+      <div class="cert-body">
+        <div class="cert-name">JIRA — Complete Guide for Software Testers</div>
+        <div class="cert-issuer">Project Management · QA</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-ico v">🎭</div>
+      <div class="cert-body">
+        <div class="cert-name">Playwright with Java — Step by Step</div>
+        <div class="cert-issuer">Modern Test Automation</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-ico a">☁️</div>
+      <div class="cert-body">
+        <div class="cert-name">Microsoft Azure Application</div>
+        <div class="cert-issuer">Microsoft Azure</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-ico">📊</div>
+      <div class="cert-body">
+        <div class="cert-name">Introduction to Big Data and Hadoop</div>
+        <div class="cert-issuer">Big Data · Hadoop</div>
+      </div>
+    </div>
+
+    <div class="cert-card">
+      <div class="cert-ico">💻</div>
+      <div class="cert-body">
+        <div class="cert-name">C for Beginners</div>
+        <div class="cert-issuer">Programming · C Language</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section class="sec contact-sec reveal" id="contact">
+  <div class="sec-eyebrow">Let's Connect</div>
+  <div class="sec-h">Open to Opportunities</div>
+  <p class="contact-sub">Immediate joiner. Open to relocation across India. Let's build quality-driven software together.</p>
+  <div class="contact-grid">
+    <a href="mailto:ramyat.dss@gmail.com" class="contact-btn"><span class="ci">✉</span> ramyat.dss@gmail.com</a>
+    <a href="tel:+917981467103" class="contact-btn"><span class="ci">📱</span> +91 79814 67103</a>
+    <a href="https://www.linkedin.com/in/ramyathatipamula" target="_blank" class="contact-btn"><span class="ci">in</span> linkedin.com/in/ramyathatipamula</a>
+  </div>
+  <div class="roles-seeking">
+    <div class="roles-title">Roles I'm Seeking</div>
+    <div class="roles-list">
+      <span class="role-tag">QA Automation Engineer</span>
+      <span class="role-tag">SDET</span>
+      <span class="role-tag">Senior QA Engineer</span>
+      <span class="role-tag">Test Automation Engineer</span>
+      <span class="role-tag">API Automation Engineer</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <p>© 2026 Ramya Thatipamula · Hyderabad, Telangana, India</p>
+  <p>ramyat.dss@gmail.com · +91 79814 67103</p>
+</footer>
+
+<script>
+// Typewriter
+const roles=['QA Automation Engineer','SDET','API Automation Engineer','Selenium + Java Expert','Test Automation Lead'];
+let ri=0,ci=0,del=false;
+const el=document.getElementById('typed');
+function type(){
+  const w=roles[ri];
+  if(!del){el.textContent=w.slice(0,++ci);if(ci===w.length){del=true;setTimeout(type,2000);return}}
+  else{el.textContent=w.slice(0,--ci);if(ci===0){del=false;ri=(ri+1)%roles.length}}
+  setTimeout(type,del?40:75);
+}
+type();
+
+// Scroll reveal
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:0.07});
+document.querySelectorAll('.reveal').forEach(r=>obs.observe(r));
+</script>
+
+
+</body></html>
